@@ -1,0 +1,2 @@
+# SumidoraVPNAdblock
+SumidoraVPNのBIND Adblock用ドメイン一覧
