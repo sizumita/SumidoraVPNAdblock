@@ -62,8 +62,8 @@ process(){
     return 1
   fi
 
-  if [ -f /opt/additional_list.txt ]; then
-    src=`cat /opt/additional_list.txt`
+  if [ -f /opt/additional_hosts.txt  ]; then
+    src=`cat /opt/additional_hosts.txt `
     format "$src" "${work_dir}host_additional.txt"
   else
     echo Not found.
