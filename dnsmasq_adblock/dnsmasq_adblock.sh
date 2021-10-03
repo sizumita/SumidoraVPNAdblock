@@ -77,6 +77,7 @@ process(){
 }
 
 main(){
+  echo executed at $(date)
   output_list_name=/etc/dnsmasq.adblock.conf
   script_dir="$(abs_dirname "$0")"
   work_dir=`make_work_dir`
