@@ -18,3 +18,7 @@ image.rakuten.co.jp
 impact-ad.jp
 js.ptengine.jp
 log.affiliate.rakuten.co.jp
+
+www.youtube.com
+open-pixon.ads-pixiv.net
+googleads.g.doubleclick.net
