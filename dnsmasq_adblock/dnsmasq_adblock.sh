@@ -33,6 +33,20 @@ download_adlist(){
   return 0
 }
 
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(readlink "$name" || true)"
+  done
+
+  pwd -P
+  cd "$cwd"
+}
+
 process(){
   post_fix=$(date +%Y%m)
   url="https://280blocker.net/files/280blocker_domain_"${post_fix}".txt"
@@ -48,9 +62,8 @@ process(){
     return 1
   fi
 
-  echo ${script_dir}/additional_list.txt
-  if [ -f ${script_dir}/additional_list.txt ]; then
-    src=`cat ${script_dir}/additional_list.txt`
+  if [ -f /opt/additional_list.txt ]; then
+    src=`cat /opt/additional_list.txt`
     format "$src" "${work_dir}host_additional.txt"
   else
     echo Not found.
